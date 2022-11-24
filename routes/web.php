@@ -15,7 +15,7 @@ use App\Http\Controllers\PerfumeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('perfumes');
 });
 
 

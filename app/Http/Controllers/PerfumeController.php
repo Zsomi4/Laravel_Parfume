@@ -11,15 +11,27 @@ class PerfumeController extends Controller
 
         $perfumes = Perfume::all();
 
-        return view( "perfumes" );
+        return view( "perfumes", [
+            "perfumes"=> $perfumes
+        ]);
+
     }
 
-    public function newPerfume() {
+    public function newPerfume(Request $request) {
+        $this->validate(
+            $request, 
+            [
+                'name.required'    => 'Nem lehet üres mező!',
+                'type.required'      => 'Nem lehet üres mező!',
+                'price.required' => 'Nem lehet üres mező!'
+            ]);
 
         return view( "new_perfume" );
     }
 
     public function storePerfume( Request $request ) {
+
+
 
         $perfume = new Perfume;
 
