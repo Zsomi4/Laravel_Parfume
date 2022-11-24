@@ -18,13 +18,6 @@ class PerfumeController extends Controller
     }
 
     public function newPerfume(Request $request) {
-        $this->validate(
-            $request, 
-            [
-                'name.required'    => 'Nem lehet üres mező!',
-                'type.required'      => 'Nem lehet üres mező!',
-                'price.required' => 'Nem lehet üres mező!'
-            ]);
 
         return view( "new_perfume" );
     }
@@ -41,7 +34,7 @@ class PerfumeController extends Controller
 
         $perfume->save();
 
-        return redirect( "/new-perfume" );
+        return redirect( "/" );
     }
 
     public function editPerfume( $id ) {
