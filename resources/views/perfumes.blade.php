@@ -4,7 +4,7 @@
 @extends( "layouts.master" )
 
 @section( "content" )
-
+<h1>Termékek</h1>
 <title>Laravel</title>
 
 <a href="/new-perfume"><button type="button" class="btn btn-success">Új termék</button></a>
