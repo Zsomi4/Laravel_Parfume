@@ -29,12 +29,13 @@ class PerfumeController extends Controller
             [
                 'name' => 'required',
                 'type' => 'required',
-                'price' => 'required'
+                'price' => 'required|regex:[0-9]'
             ],
             [
                 'name.required' => 'Nem lehet a név mező üres!',
                 'type.required' => 'Nem lehet a típus mező üres!',
-                'price.required' => 'Nem lehet az ár mező üres!'
+                'price.required' => 'Nem lehet az ár mező üres!',
+                'price.regex' => 'Csak számokat adhatsz meg!'
             ]);
 
 
