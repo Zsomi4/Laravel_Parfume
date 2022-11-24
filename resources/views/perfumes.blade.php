@@ -1,6 +1,10 @@
+<title>Termékek</title>
+
 @extends( "layouts.master" )
 
 @section( "content" )
+
+<title>Laravel</title>
 
 <a href="/new-perfume"><button>Új termék</button></a>
 

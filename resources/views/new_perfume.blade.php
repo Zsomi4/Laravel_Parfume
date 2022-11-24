@@ -1,3 +1,5 @@
+<title>Termékek</title>
+
 @extends( "layouts.master" )
 
 @section( "content" )

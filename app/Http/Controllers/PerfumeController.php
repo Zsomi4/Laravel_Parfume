@@ -21,8 +21,6 @@ class PerfumeController extends Controller
 
     public function storePerfume( Request $request ) {
 
-        $perfumes = $perfume;
-        
         $perfume = new Perfume;
 
         $perfume->name = $request->name;
@@ -44,9 +42,7 @@ class PerfumeController extends Controller
     }
 
     public function updatePerfume( Request $request ) {
-            $perfume = Perfume::where("name",
-            $request->name)->first();
-
+            $perfume = Perfume::where("name", $request->name)->first();
             $perfume->name = $request->name;
             $perfume->type = $request->type;
             $perfume->price = $request->price;

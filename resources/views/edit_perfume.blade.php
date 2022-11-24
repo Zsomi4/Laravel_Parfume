@@ -1,3 +1,5 @@
+<title>Szerkesztés</title>
+
 @extends( "layouts.master" )
 
 @section( "content" )
