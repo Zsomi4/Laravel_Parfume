@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get( "/perfumes", [ PerfumeController::class, "getPerfumes" ]);
 Route::get( "/new-perfume", [ PerfumeController::class, "newPerfume" ]);
 Route::post( "/add-perfume", [ PerfumeController::class, "storePerfume" ]);
