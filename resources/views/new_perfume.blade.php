@@ -12,7 +12,7 @@
     </ul>
 @endif
 
-<form action="add-perfume" method="post">
+<form action="/add-perfume" method="post">
     @csrf
     <p>
         <label for="">Név</label>

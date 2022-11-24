@@ -11,7 +11,7 @@ class PerfumeController extends Controller
 
         $perfumes = Perfume::all();
 
-        return view( "/perfumes" );
+        return view( "perfumes" );
     }
 
     public function newPerfume() {
@@ -21,11 +21,13 @@ class PerfumeController extends Controller
 
     public function storePerfume( Request $request ) {
 
+        $perfumes = $perfume;
+        
         $perfume = new Perfume;
 
         $perfume->name = $request->name;
         $perfume->type = $request->type;
-        $perfume->price = (int)$request->price;
+        $perfume->price = (string)$request->price;
 
         $perfume->save();
 
@@ -42,7 +44,16 @@ class PerfumeController extends Controller
     }
 
     public function updatePerfume( Request $request ) {
+            $perfume = Perfume::where("name",
+            $request->name)->first();
 
+            $perfume->name = $request->name;
+            $perfume->type = $request->type;
+            $perfume->price = $request->price;
+
+            $perfume->save();
+
+            return redirect("/perfumes");
     }
 
     public function deletePerfume( $id ) {
