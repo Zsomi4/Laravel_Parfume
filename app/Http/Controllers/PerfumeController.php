@@ -24,6 +24,18 @@ class PerfumeController extends Controller
 
     public function storePerfume( Request $request ) {
 
+        print_r($request->all());
+        $request->validate(
+            [
+                'name' => 'required',
+                'type' => 'required',
+                'price' => 'required'
+            ],
+            [
+                'name.required' => 'Nem lehet a név mező üres!',
+                'type.required' => 'Nem lehet a típus mező üres!',
+                'price.required' => 'Nem lehet az ár mező üres!'
+            ]);
 
 
         $perfume = new Perfume;
